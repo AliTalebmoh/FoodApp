@@ -1,5 +1,8 @@
 # 🍽️ Food Ordering System
 
+THE JIRA PROJECT FOR MEMBERS 🔒:
+https://ounessaghezzaf18.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiZTFiN2ViOWI5OWU4NDM0ZDhiMjE0YmYxYjgzZTE0MmEiLCJwIjoiaiJ9
+
 A full-stack web application for restaurant food ordering and management, built with PHP and MySQL.
 
 ## 🌟 Features
