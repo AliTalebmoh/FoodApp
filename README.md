@@ -43,7 +43,7 @@ A full-stack web application for restaurant food ordering and management, built 
 
 1. Clone the repository
 
-- git clone https://github.com/AliTalebmoh/Food-Lovers.git
+- git clone https://github.com/AliTalebmoh/FoodApp
 
 2. Import the database
 
@@ -59,8 +59,8 @@ A full-stack web application for restaurant food ordering and management, built 
 
 5. Access the application
 
-- Customer panel: `http://localhost/Food-Lovers`
-- Admin panel: `http://localhost/Food-Lovers/admin`
+- Customer panel: `http://localhost/FoodApp`
+- Admin panel: `http://localhost/FoodApp/admin`
 
 ## 👤 Default Admin Credentials
 
@@ -71,6 +71,9 @@ Password: 111
 
 ![alt text](./images/screenshot1.png)
 ![alt text](./images/screenshot2.png)
+![alt text](./images/screenshot3.png)
+![alt text](./images/screenshot4.png)
+![alt text](./images/screenshot5.png)
 
 ## 🔒 Security Features
 
