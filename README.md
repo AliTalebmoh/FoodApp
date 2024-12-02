@@ -72,15 +72,24 @@ Password: 111
 
 ## 📱 Screenshots
 
-HOME PAGE:
+# HOME PAGE:
+
 ![alt text](./images/screenshot1.png)
-MENU:
+
+# MENU:
+
 ![alt text](./images/screenshot2.png)
-LOGIN:
+
+# LOGIN:
+
 ![alt text](./images/screenshot3.png)
-ABOUT:
+
+# ABOUT:
+
 ![alt text](./images/screenshot4.png)
-CONTACT: (`And Much More`)
+
+# CONTACT: (`And Much More`)
+
 ![alt text](./images/screenshot5.png)
 
 ## 🔒 Security Features
