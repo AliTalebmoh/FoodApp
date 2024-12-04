@@ -1,0 +1,70 @@
+name: CI/CD Pipeline for FoodApp
+
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  # Stage 1:
+  initiation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Print initialization message
+      run: echo "Initializing FoodApp pipeline..."
+
+  # Stage 2:
+  tests-unitaires:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+
+    - name: Install dependencies
+      run: |
+        composer install --no-interaction --prefer-dist
+
+    - name: Run PHPUnit tests
+      run: |
+        vendor/bin/phpunit --coverage-clover=phpunit-coverage-result.xml --log-junit=phpunit-execution-result.xml
+      continue-on-error: false
+
+    - name: Upload test results as artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: phpunit-test-results
+        path: |
+          phpunit-execution-result.xml
+          phpunit-coverage-result.xml
+
+  # Stage 3:
+  qualite-du-code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SonarQube Scanner
+      uses: sonarsource/sonarcloud-github-action@v1
+      with:
+        sonar-token: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Run SonarQube analysis
+      run: |
+        sonar-scanner \
+          -D"sonar.projectKey=FoodApp" \
+          -D"sonar.sources=." \
+          -D"sonar.host.url=https://sonarcloud.io" \
+          -D"sonar.login=${{ secrets.SONAR_TOKEN }}"
